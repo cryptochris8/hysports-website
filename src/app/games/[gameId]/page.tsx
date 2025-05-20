@@ -1,12 +1,5 @@
 import Link from 'next/link';
 
-// Define an interface for the game page props
-interface GamePageProps {
-  params: {
-    gameId: string;
-  };
-}
-
 // Placeholder data structure for a single game. 
 // In a real app, you'd fetch this from a CMS/DB based on gameId.
 interface GameDetails {
@@ -57,7 +50,7 @@ const getGameDetails = (gameId: string): GameDetails | undefined => {
   return gamesData[gameId];
 };
 
-export default function GamePage({ params }: GamePageProps) {
+export default function GamePage({ params }: { params: { gameId: string } }) {
   const { gameId } = params;
   const game = getGameDetails(gameId);
 
