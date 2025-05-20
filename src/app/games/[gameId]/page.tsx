@@ -50,7 +50,14 @@ const getGameDetails = (gameId: string): GameDetails | undefined => {
   return gamesData[gameId];
 };
 
-export default function GamePage({ params }: { params: { gameId: string } }) {
+interface PageProps {
+  params: {
+    gameId: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export default async function GamePage({ params, searchParams }: PageProps) {
   const { gameId } = params;
   const game = getGameDetails(gameId);
 
