@@ -54,10 +54,9 @@ interface PageProps {
   params: {
     gameId: string;
   };
-  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export default async function GamePage({ params, searchParams }: PageProps) {
+export default async function GamePage({ params }: PageProps) {
   const { gameId } = params;
   const game = getGameDetails(gameId);
 
