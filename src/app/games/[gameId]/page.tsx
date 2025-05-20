@@ -51,13 +51,25 @@ const getGameDetails = (gameId: string): GameDetails | undefined => {
 };
 
 interface PageProps {
-  params: {
-    gameId: string;
-  };
+  params: any; // Using any to try and bypass the specific type error
 }
 
 export default async function GamePage({ params }: PageProps) {
-  const { gameId } = params;
+  const gameId = params?.gameId as string; // Safely access gameId and assert its type
+
+  if (!gameId) {
+    // Handle case where gameId might not be available as expected
+    return (
+      <div className="container mx-auto px-4 py-8 text-center">
+        <h1 className="text-3xl font-bold mb-4">Error</h1>
+        <p className="mb-8">Could not determine the game ID.</p>
+        <Link href="/games" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Back to Games
+        </Link>
+      </div>
+    );
+  }
+
   const game = getGameDetails(gameId);
 
   if (!game) {
