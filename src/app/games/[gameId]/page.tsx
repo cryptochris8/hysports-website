@@ -66,7 +66,7 @@ export default function GamePage({ params }: GamePageProps) {
     return (
       <div className="container mx-auto px-4 py-8 text-center">
         <h1 className="text-3xl font-bold mb-4">Game Not Found</h1>
-        <p className="mb-8">Sorry, we couldn't find details for this game.</p>
+        <p className="mb-8">Sorry, we couldn&apos;t find details for this game.</p>
         <Link href="/games" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Back to Games
         </Link>

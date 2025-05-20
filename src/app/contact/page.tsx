@@ -6,7 +6,7 @@ export default function ContactPage() {
         
         <div className="prose prose-lg max-w-none text-gray-700">
           <p className="text-lg mb-6">
-            We'd love to hear from you! Whether you have questions, feedback, or partnership inquiries, feel free to reach out.
+            We&apos;d love to hear from you! Whether you have questions, feedback, or partnership inquiries, feel free to reach out.
           </p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-3">Email Us</h2>

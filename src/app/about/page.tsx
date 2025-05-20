@@ -20,7 +20,7 @@ export default function AboutPage() {
           </p>
           <h2 className="text-2xl font-semibold mt-8 mb-4">Join Us on Our Journey</h2>
           <p>
-            Follow our progress and become part of the Hysports community as we bring our vision to life. We're just getting started!
+            Follow our progress and become part of the Hysports community as we bring our vision to life. We&apos;re just getting started!
           </p>
         </div>
         <div className="mt-12 text-center">
