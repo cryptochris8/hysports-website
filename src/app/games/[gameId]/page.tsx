@@ -51,6 +51,7 @@ const getGameDetails = (gameId: string): GameDetails | undefined => {
 };
 
 interface PageProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   params: any; // Using any to try and bypass the specific type error
 }
 
