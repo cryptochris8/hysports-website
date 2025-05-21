@@ -13,7 +13,7 @@ interface Game {
 // Sample game data - this would ideally come from a CMS or database
 const games: Game[] = [
   { id: 'soccer', name: 'Soccer', icon: '⚽', imageUrl: '/images/hysoccer_banner.png', pageUrl: '/games/soccer' },
-  { id: 'basketball', name: 'Basketball', icon: '🏀', pageUrl: '/games/basketball' },
+  { id: 'basketball', name: 'Basketball', icon: '🏀', imageUrl: '/images/hysports-3ball.png', pageUrl: '/games/basketball' },
   { id: 'pool', name: 'Pool', icon: '🎱', pageUrl: '/games/pool' },
   { id: 'puttputt', name: 'Putt Putt Golf', icon: '⛳', pageUrl: '/games/putt-putt' },
 ];

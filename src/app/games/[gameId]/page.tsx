@@ -25,7 +25,7 @@ const getGameDetails = (gameId: string): GameDetails | undefined => {
     basketball: {
       id: 'basketball',
       name: 'Hysports Basketball',
-      bannerUrl: 'https://via.placeholder.com/1200x400?text=Basketball+Banner',
+      bannerUrl: '/images/hysports-3ball.png',
       description: 'Hit the courts and show off your skills. Slam dunks, three-pointers, and intense matches await!',
       features: ['Streetball and pro modes', 'Online leaderboards', 'Skill challenges', 'Team creation'],
       status: 'In Development',
