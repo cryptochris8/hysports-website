@@ -96,6 +96,7 @@ export default async function GamePage({ params }: PageProps) {
             src={game.bannerUrl}
             alt={`${game.name} banner`}
             fill
+            priority
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />

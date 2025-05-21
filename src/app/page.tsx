@@ -46,6 +46,7 @@ export default function HomePage() {
                       src={game.imageUrl}
                       alt={game.name}
                       fill
+                      priority
                       className="object-contain rounded-lg"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
