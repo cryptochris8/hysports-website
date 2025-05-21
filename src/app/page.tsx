@@ -1,16 +1,18 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Define an interface for game details to ensure type safety
 interface Game {
   id: string;
   name: string;
-  icon: string; // Placeholder for icon, could be an emoji or SVG path
+  icon?: string; // Optional emoji icon
+  imageUrl?: string; // Optional image URL
   pageUrl: string;
 }
 
 // Sample game data - this would ideally come from a CMS or database
 const games: Game[] = [
-  { id: 'soccer', name: 'Soccer', icon: '⚽', pageUrl: '/games/soccer' },
+  { id: 'soccer', name: 'Soccer', imageUrl: '/images/hysports-banner.png', pageUrl: '/games/soccer' },
   { id: 'basketball', name: 'Basketball', icon: '🏀', pageUrl: '/games/basketball' },
   { id: 'pool', name: 'Pool', icon: '🎱', pageUrl: '/games/pool' },
   { id: 'puttputt', name: 'Putt Putt Golf', icon: '⛳', pageUrl: '/games/putt-putt' },
@@ -37,7 +39,21 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {games.map((game) => (
             <Link key={game.id} href={game.pageUrl} className="block p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
-              <div className="text-5xl mb-4 text-center">{game.icon}</div>
+              <div className="text-5xl mb-4 text-center">
+                {game.imageUrl ? (
+                  <div className="relative h-32 w-full mb-4">
+                    <Image
+                      src={game.imageUrl}
+                      alt={game.name}
+                      fill
+                      className="object-cover rounded-lg"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                  </div>
+                ) : (
+                  <div className="text-5xl">{game.icon}</div>
+                )}
+              </div>
               <h3 className="text-2xl font-semibold text-center text-gray-700">{game.name}</h3>
               {/* Short description or status can be added here if needed */}
             </Link>
