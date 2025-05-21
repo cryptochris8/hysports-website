@@ -12,7 +12,7 @@ interface Game {
 
 // Sample game data - this would ideally come from a CMS or database
 const games: Game[] = [
-  { id: 'soccer', name: 'Soccer', imageUrl: '/images/hysports-banner.png', pageUrl: '/games/soccer' },
+  { id: 'soccer', name: 'Soccer', icon: '⚽', imageUrl: '/images/hysoccer_banner.png', pageUrl: '/games/soccer' },
   { id: 'basketball', name: 'Basketball', icon: '🏀', pageUrl: '/games/basketball' },
   { id: 'pool', name: 'Pool', icon: '🎱', pageUrl: '/games/pool' },
   { id: 'puttputt', name: 'Putt Putt Golf', icon: '⛳', pageUrl: '/games/putt-putt' },
@@ -41,12 +41,12 @@ export default function HomePage() {
             <Link key={game.id} href={game.pageUrl} className="block p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
               <div className="text-5xl mb-4 text-center">
                 {game.imageUrl ? (
-                  <div className="relative h-32 w-full mb-4">
+                  <div className="relative h-48 w-full mb-4 bg-gray-200">
                     <Image
                       src={game.imageUrl}
                       alt={game.name}
                       fill
-                      className="object-cover rounded-lg"
+                      className="object-contain rounded-lg"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
                   </div>
