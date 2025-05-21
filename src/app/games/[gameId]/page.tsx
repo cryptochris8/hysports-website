@@ -17,7 +17,7 @@ const getGameDetails = (gameId: string): GameDetails | undefined => {
     soccer: {
       id: 'soccer',
       name: 'Hysports Soccer',
-      bannerUrl: 'https://via.placeholder.com/1200x400?text=Soccer+Banner',
+      bannerUrl: '/images/hysports-soccer.png',
       description: 'Experience the thrill of the beautiful game in the Hytopia metaverse. Dribble, pass, and score your way to victory!',
       features: ['Realistic physics', 'Multiplayer matches', 'Customizable avatars', 'Tournament mode'],
       status: 'In Development',
