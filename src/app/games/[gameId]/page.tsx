@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Placeholder data structure for a single game. 
 // In a real app, you'd fetch this from a CMS/DB based on gameId.
@@ -90,10 +91,14 @@ export default async function GamePage({ params }: PageProps) {
     <div className="container mx-auto px-4 py-8">
       {/* Banner Image */}
       {game.bannerUrl && (
-        <div className="mb-8 h-64 md:h-96 bg-gray-300 rounded-lg shadow-md overflow-hidden">
-          {/* In a real app, you'd use Next/Image here for optimization */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={game.bannerUrl} alt={`${game.name} banner`} className="w-full h-full object-cover" />
+        <div className="mb-8 h-64 md:h-96 bg-gray-300 rounded-lg shadow-md overflow-hidden relative">
+          <Image
+            src={game.bannerUrl}
+            alt={`${game.name} banner`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          />
         </div>
       )}
 
